@@ -1,49 +1,49 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+  import { computed } from 'vue'
 
-type IconName =
-  | 'home'
-  | 'qr'
-  | 'plane'
-  | 'newspaper'
-  | 'card'
-  | 'user'
-  | 'bars'
-  | 'pin'
-  | 'messages'
-  | 'info'
-  | 'chevronright'
-  | 'stats-transport'
-  | 'stats-games'
-  | 'stats-chance'
-  | 'stats-donation'
-  | 'stats-findeks'
-  | 'stats-airport'
-  | 'stats-gsm'
+  type IconName =
+    | 'home'
+    | 'qr'
+    | 'plane'
+    | 'newspaper'
+    | 'card'
+    | 'user'
+    | 'bars'
+    | 'pin'
+    | 'messages'
+    | 'info'
+    | 'chevronright'
+    | 'stats-transport'
+    | 'stats-games'
+    | 'stats-chance'
+    | 'stats-donation'
+    | 'stats-findeks'
+    | 'stats-airport'
+    | 'stats-gsm'
 
-const props = withDefaults(
-  defineProps<{
-    name: IconName
-    /** Icon size in px (number) or any CSS size string (e.g. "1.5rem") */
-    size?: number | string
-    /** SVG color (applied to fill) */
-    color?: string
-    /** Background color of the icon container */
-    bgColor?: string
-    /** Whether the background should be fully rounded */
-    rounded?: boolean
-  }>(),
-  {
-    size: 20,
-    color: 'currentColor',
-    bgColor: 'transparent',
-    rounded: false,
-  }
-)
+  const props = withDefaults(
+    defineProps<{
+      name: IconName
+      /** Icon size in px (number) or any CSS size string (e.g. "1.5rem") */
+      size?: number | string
+      /** SVG color (applied to fill) */
+      color?: string
+      /** Background color of the icon container */
+      bgColor?: string
+      /** Whether the background should be fully rounded */
+      rounded?: boolean
+    }>(),
+    {
+      size: 20,
+      color: 'currentColor',
+      bgColor: 'transparent',
+      rounded: false,
+    },
+  )
 
-const sizePx = computed(() =>
-  typeof props.size === 'number' ? `${props.size}px` : props.size
-)
+  const sizePx = computed(() =>
+    typeof props.size === 'number' ? `${props.size}px` : props.size,
+  )
 </script>
 
 <template>
@@ -156,7 +156,7 @@ const sizePx = computed(() =>
       />
     </svg>
 
-        <!-- MESSAGES -->
+    <!-- MESSAGES -->
     <svg
       v-else-if="name === 'messages'"
       xmlns="http://www.w3.org/2000/svg"
@@ -169,14 +169,14 @@ const sizePx = computed(() =>
       />
     </svg>
 
-     <!-- INFO -->
-      <svg
-        v-else-if="name === 'info'"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 512 512"
-        :style="{ width: sizePx, height: sizePx }"
-        :fill="color"
-      >
+    <!-- INFO -->
+    <svg
+      v-else-if="name === 'info'"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+      :style="{ width: sizePx, height: sizePx }"
+      :fill="color"
+    >
       <path
         d="M256 32a224 224 0 1 1 0 448 224 224 0 1 1 0-448zm0 480a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM208 352c-8.8 0-16 7.2-16 16s7.2 16 16 16l96 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0 0-112c0-8.8-7.2-16-16-16l-48 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0 0 96-32 0zm48-168a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"
       />
@@ -184,16 +184,20 @@ const sizePx = computed(() =>
 
     <!-- chevron right -->
     <svg
-        v-else-if="name === 'chevronright'"
+      v-else-if="name === 'chevronright'"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 320 512"
+      :style="{ width: sizePx, height: sizePx }"
+      :fill="color"
+    >
+      <path
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 320 512"
-        :style="{ width: sizePx, height: sizePx }"
-        :fill="color"
-      >
-      <path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M313.5 239c9.4 9.4 9.4 24.6 0 33.9l-200 200c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l183-183-183-183c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l200 200z"/>
+        fill="currentColor"
+        d="M313.5 239c9.4 9.4 9.4 24.6 0 33.9l-200 200c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l183-183-183-183c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l200 200z"
+      />
     </svg>
 
-        <!-- STATS: DONATION (heart in box) -->
+    <!-- STATS: DONATION (heart in box) -->
     <svg
       v-else-if="name === 'stats-donation'"
       xmlns="http://www.w3.org/2000/svg"
@@ -283,7 +287,5 @@ const sizePx = computed(() =>
         d="M252 153.4c-18.4 0-34.9 11.2-41.8 28.3l-12.7 31.7-34.1 2.3c-18.4 1.2-34.1 13.5-39.8 31s-.1 36.7 14 48.5l26.3 21.9-8.4 33.1c-4.5 17.8 2.3 36.6 17.2 47.4s34.9 11.5 50.4 1.7l28.9-18.2 28.9 18.2c15.6 9.8 35.5 9.1 50.4-1.7S353 368 348.5 350.2l-8.4-33.1 26.3-21.9c14.1-11.8 19.7-31 14-48.5s-21.5-29.8-39.8-31l-34.1-2.3-12.7-31.7c-6.8-17.1-23.4-28.3-41.8-28.3zm-8.4 41.7c1.4-3.4 4.7-5.7 8.4-5.7s7 2.2 8.4 5.7l16.9 42.3c2.6 6.4 8.6 10.8 15.5 11.3l45.4 3c3.7 .2 6.8 2.7 8 6.2s0 7.3-2.8 9.7l-35 29.1c-5.3 4.4-7.6 11.5-5.9 18.2L313.6 359c.9 3.6-.5 7.3-3.4 9.5s-7 2.3-10.1 .3l-38.5-24.3c-5.9-3.7-13.3-3.7-19.2 0l-38.5 24.3c-3.1 2-7.1 1.8-10.1-.3s-4.3-5.9-3.4-9.5l11.2-44.1c1.7-6.7-.6-13.8-5.9-18.2l-35-29.1c-2.8-2.4-3.9-6.2-2.8-9.7s4.3-6 8-6.2l45.4-3c6.9-.5 12.9-4.8 15.5-11.3l16.9-42.3zM72 90c-39.8 0-72 32.2-72 72 0 10.4 4.5 18.9 9.7 24.9 5.1 5.9 11.3 10.3 16.9 13.3 5.6 3.1 9.4 9 9.4 15.8s-3.8 12.7-9.4 15.8c-5.6 3.1-11.9 7.4-16.9 13.3-5.1 6-9.7 14.4-9.7 24.9l0 36c0 10.4 4.5 18.9 9.7 24.9 5.1 5.9 11.3 10.3 16.9 13.3 5.6 3.1 9.4 9 9.4 15.8s-3.8 12.7-9.4 15.8c-5.6 3.1-11.9 7.4-16.9 13.3-5.1 6-9.7 14.4-9.7 24.9 0 39.8 32.2 72 72 72l360 0c39.8 0 72-32.2 72-72 0-10.4-4.6-18.9-9.7-24.9-5.1-5.9-11.3-10.3-16.9-13.3-5.6-3.1-9.4-9-9.4-15.8s3.8-12.7 9.4-15.8c5.6-3.1 11.9-7.4 16.9-13.3 5.1-6 9.7-14.4 9.7-24.9l0-36c0-10.4-4.6-18.9-9.7-24.9-5.1-5.9-11.3-10.3-16.9-13.3-5.6-3.1-9.4-9-9.4-15.8s3.8-12.7 9.4-15.8c5.6-3.1 11.9-7.4 16.9-13.3 5.1-6 9.7-14.4 9.7-24.9 0-39.8-32.2-72-72-72L72 90zM37 163.4c-.7-.8-1-1.4-1-1.6 .1-19.8 16.2-35.8 36-35.8l360 0c19.8 0 36 16 36 35.8-.1 .2-.3 .8-1 1.6-1.4 1.6-3.7 3.5-6.9 5.2-16.7 9.1-28.1 26.9-28.1 47.4s11.4 38.2 28.1 47.4c3.1 1.7 5.5 3.6 6.9 5.2 .7 .8 1 1.3 1 1.5l0 35.7c-.1 .2-.3 .8-1 1.6-1.4 1.6-3.7 3.5-6.9 5.2-16.7 9.1-28.1 26.9-28.1 47.4s11.4 38.2 28.1 47.4c3.1 1.7 5.5 3.6 6.9 5.2 .7 .8 1 1.3 1 1.5-.1 19.8-16.2 35.9-36 35.9L72 450c-19.8 0-35.9-16.1-36-35.9 .1-.2 .3-.7 1-1.5 1.4-1.6 3.7-3.5 6.9-5.2 16.7-9.1 28.1-26.9 28.1-47.4s-11.4-38.2-28.1-47.4c-2.6-1.4-6.8-3.7-7.9-6.7l0-35.8c1.1-3 5.3-5.3 7.9-6.7 16.7-9.1 28.1-26.9 28.1-47.4s-11.4-38.2-28.1-47.4c-3.1-1.7-5.5-3.6-6.9-5.2z"
       />
     </svg>
-
-
   </span>
 </template>

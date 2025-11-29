@@ -1,17 +1,17 @@
 <script setup lang="ts">
-interface Props {
-  label: string
-}
+  interface Props {
+    label: string
+  }
 
-const props = defineProps<Props>()
+  const props = defineProps<Props>()
 
-const emit = defineEmits<{
-  (e: 'click'): void
-}>()
+  const emit = defineEmits<{
+    (e: 'click'): void
+  }>()
 
-function onClick() {
-  emit('click')
-}
+  function onClick() {
+    emit('click')
+  }
 </script>
 
 <template>

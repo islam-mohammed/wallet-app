@@ -7,7 +7,7 @@ import path from 'path'
 export default defineConfig({
   plugins: [
     VueRouter({
-      dts: 'src/typed-router.d.ts', 
+      dts: 'src/typed-router.d.ts',
     }),
     vue(),
     VitePWA({
@@ -25,22 +25,22 @@ export default defineConfig({
           {
             src: 'pwa-192x192.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
           },
           {
             src: 'pwa-512x512.png',
             sizes: '512x512',
-            type: 'image/png'
+            type: 'image/png',
           },
           {
             src: 'pwa-512x512-maskable.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: 'maskable'
-          }
-        ]
-      }
-    })
+            purpose: 'maskable',
+          },
+        ],
+      },
+    }),
   ],
   resolve: {
     alias: {

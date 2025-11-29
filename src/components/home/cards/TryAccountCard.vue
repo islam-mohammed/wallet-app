@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AppIcon from '@/components/icons/AppIcon.vue'
+  import AppIcon from '@/components/icons/AppIcon.vue'
 </script>
 
 <template>
@@ -14,22 +14,17 @@ import AppIcon from '@/components/icons/AppIcon.vue'
           <span class="text-[9px] text-white font-semibold">TR</span>
         </div>
       </div>
-      <span class="text-[12px] text-slate-200 font-regular">
-        Turkish Lira Account
-      </span>
+      <span class="text-[12px] text-slate-200 font-regular"> Turkish Lira Account </span>
     </div>
 
     <!-- Divider -->
     <div class="mt-3 h-px bg-white/5" />
 
     <!-- Balance -->
-    <div class="mt-4 flex  gap-2 items-center">
+    <div class="mt-4 flex gap-2 items-center">
       <span class="text-3xl leading-none font-semibold">₺0.00</span>
-      <button
-        type="button"
-        class="text-xs text-slate-400 flex items-center gap-1"
-      >
-       <AppIcon name="info"  :size="16" color="#fff"/>
+      <button type="button" class="text-xs text-slate-400 flex items-center gap-1">
+        <AppIcon name="info" :size="16" color="#fff" />
       </button>
     </div>
 
@@ -41,14 +36,14 @@ import AppIcon from '@/components/icons/AppIcon.vue'
     <div class="mt-4 grid grid-cols-2 gap-2">
       <!-- Deposit / Withdraw -->
       <button
-      type="button"
+        type="button"
         class="flex items-center justify-between rounded-lg bg-black text-sm p-2"
       >
         <span>Dep / With</span>
         <span
           class="w-7 h-7 rounded-sm bg-white text-black flex items-center justify-center"
         >
-          <AppIcon name="card"  :size="14" color="#000000" />
+          <AppIcon name="card" :size="14" color="#000000" />
         </span>
       </button>
 

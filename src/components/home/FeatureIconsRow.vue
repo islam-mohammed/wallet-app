@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import AppIcon from '@/components/icons/AppIcon.vue'
+  import AppIcon from '@/components/icons/AppIcon.vue'
 
-interface FeatureIcon {
-  id: number
-  label: string
-  bg: string
-  pinned?: boolean
-}
+  interface FeatureIcon {
+    id: number
+    label: string
+    bg: string
+    pinned?: boolean
+  }
 
-const props = defineProps<{
-  items: FeatureIcon[]
-}>()
+  const props = defineProps<{
+    items: FeatureIcon[]
+  }>()
 </script>
 
 <template>
@@ -67,9 +67,7 @@ const props = defineProps<{
           </div>
         </div>
 
-        <p
-          class="mt-1 text-[11px] text-slate-300 text-center leading-tight"
-        >
+        <p class="mt-1 text-[11px] text-slate-300 text-center leading-tight">
           {{ item.label }}
         </p>
       </div>

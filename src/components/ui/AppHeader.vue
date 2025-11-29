@@ -1,23 +1,23 @@
 <script setup lang="ts">
-interface Props {
-  title?: string
-  centerTitle?: boolean
-  showBack?: boolean
-}
+  interface Props {
+    title?: string
+    centerTitle?: boolean
+    showBack?: boolean
+  }
 
-const props = withDefaults(defineProps<Props>(), {
-  title: '',
-  centerTitle: false,
-  showBack: true,
-})
+  const props = withDefaults(defineProps<Props>(), {
+    title: '',
+    centerTitle: false,
+    showBack: true,
+  })
 
-const emit = defineEmits<{
-  (e: 'back'): void
-}>()
+  const emit = defineEmits<{
+    (e: 'back'): void
+  }>()
 
-function handleBack() {
-  emit('back')
-}
+  function handleBack() {
+    emit('back')
+  }
 </script>
 
 <template>
@@ -32,14 +32,8 @@ function handleBack() {
       ‹
     </button>
 
-    <div
-      class="flex-1"
-      :class="props.centerTitle ? 'text-center' : 'ml-3'"
-    >
-      <h1
-        v-if="props.title"
-        class="text-base font-semibold text-slate-50"
-      >
+    <div class="flex-1" :class="props.centerTitle ? 'text-center' : 'ml-3'">
+      <h1 v-if="props.title" class="text-base font-semibold text-slate-50">
         {{ props.title }}
       </h1>
     </div>

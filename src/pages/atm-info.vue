@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
-import AppHeader from '@/components/ui/AppHeader.vue'
-import PrimaryButton from '@/components/ui/PrimaryButton.vue'
-import SecondaryButton from '@/components/ui/SecondaryButton.vue'
-import CardShowcase from '@/components/ui/CardShowcase.vue'
+  import { useRouter } from 'vue-router'
+  import AppHeader from '@/components/ui/AppHeader.vue'
+  import PrimaryButton from '@/components/ui/PrimaryButton.vue'
+  import SecondaryButton from '@/components/ui/SecondaryButton.vue'
+  import CardShowcase from '@/components/ui/CardShowcase.vue'
 
-const router = useRouter()
+  const router = useRouter()
 
-function goBack() {
-  router.back()
-}
+  function goBack() {
+    router.back()
+  }
 
-function handleFindAtm() {
-  console.log('ATM Bul clicked')
-}
+  function handleFindAtm() {
+    console.log('ATM Bul clicked')
+  }
 
-function handleRequestCard() {
-  console.log('Papara Card iste clicked')
-}
+  function handleRequestCard() {
+    console.log('Papara Card iste clicked')
+  }
 </script>
 
 <template>
@@ -31,7 +31,8 @@ function handleRequestCard() {
         </h1>
 
         <p class="mt-3 text-sm leading-relaxed text-slate-400">
-With your Papara Card, you can withdraw money from all ATMs, and you can deposit and withdraw money completely free of charge at Akbank ATMs.
+          With your Papara Card, you can withdraw money from all ATMs, and you can deposit
+          and withdraw money completely free of charge at Akbank ATMs.
         </p>
       </section>
 

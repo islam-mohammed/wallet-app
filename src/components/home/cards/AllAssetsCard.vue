@@ -1,10 +1,7 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div
-    class="bg-neutral-800 border border-[#1F1F1F] rounded-lg p-4 text-white h-full"
-  >
+  <div class="bg-neutral-800 border border-[#1F1F1F] rounded-lg p-4 text-white h-full">
     <!-- Header row -->
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-2">
@@ -13,9 +10,7 @@
         >
           P
         </div>
-        <span class="text-sm text-slate-200 font-medium">
-          My Assets
-        </span>
+        <span class="text-sm text-slate-200 font-medium"> My Assets </span>
       </div>
 
       <!-- Currency toggle mimic -->

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import metalLogos from '@/assets/images/precious_metals.webp'      // ← replace with your real asset
-import metalCardImage from '@/assets/images/gold_stack.webp'   // ← replace with your real asset
-import AppIcon from '@/components/icons/AppIcon.vue';
+  import metalLogos from '@/assets/images/precious_metals.webp' // ← replace with your real asset
+  import metalCardImage from '@/assets/images/gold_stack.webp' // ← replace with your real asset
+  import AppIcon from '@/components/icons/AppIcon.vue'
 </script>
 
 <template>
@@ -13,11 +13,7 @@ import AppIcon from '@/components/icons/AppIcon.vue';
       <div class="flex-1 flex flex-col w-[60%]">
         <!-- Logos / metal brand row -->
         <div class="mb-2">
-          <img
-            :src="metalLogos"
-            alt="Metal card brands"
-            class="h-7 "
-          />
+          <img :src="metalLogos" alt="Metal card brands" class="h-7" />
         </div>
 
         <h2 class="text-2xl leading-5.5 mt-1 whitespace-pre-line">
@@ -31,11 +27,7 @@ import AppIcon from '@/components/icons/AppIcon.vue';
 
       <!-- Right illustration -->
       <div class="ml-3 flex items-end justify-end w-[40%]">
-        <img
-          :src="metalCardImage"
-          alt="Metal card"
-          width="80"
-        />
+        <img :src="metalCardImage" alt="Metal card" width="80" />
       </div>
     </div>
 

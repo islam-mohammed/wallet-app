@@ -21,11 +21,8 @@ export interface SummarySlide extends BaseSlide {
   changeLabel?: string
 }
 
-
 export interface AccountSlide extends BaseSlide {
   type: 'account'
   totalValue: string
   Iban: string
 }
-
-
