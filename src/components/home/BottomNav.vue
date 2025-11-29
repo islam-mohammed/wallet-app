@@ -8,22 +8,22 @@ import AppIcon from '@/components/icons/AppIcon.vue'
 
       <button class="flex flex-col items-center gap-1 text-white">
         <AppIcon name="home" :size="22" color="#fff" />
-        <span class="text-xs">Ana Sayfa</span>
+        <span class="text-xs">Home</span>
       </button>
 
       <button class="flex flex-col items-center gap-1 text-gray-400">
         <AppIcon name="qr" :size="22" color="#9ca3af" />
-        <span class="text-xs">QR İşlemleri</span>
+        <span class="text-xs">QR Transactions</span>
       </button>
 
       <button class="flex flex-col items-center gap-1 text-gray-400">
         <AppIcon name="plane" :size="22" color="#9ca3af" />
-        <span class="text-xs">Para Transferi</span>
+        <span class="text-xs">Money Transfer</span>
       </button>
 
       <button class="flex flex-col items-center gap-1 text-gray-400">
         <AppIcon name="newspaper" :size="22" color="#9ca3af" />
-        <span class="text-xs">Ödemeler</span>
+        <span class="text-xs">Payments</span>
       </button>
 
       <button class="flex flex-col items-center gap-1 text-gray-400">

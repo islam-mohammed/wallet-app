@@ -11,6 +11,7 @@ import AllAssetsCard from '@/components/home/cards/AllAssetsCard.vue'
 import SavingAccountCard from '@/components/home/cards/SavingAccountCard.vue'
 import NotificationBanner from '@/components/home/NotificationBanner.vue'
 import QuickActionsRow from '@/components/home/QuickActionsRow.vue'
+import TransactionList from '@/components/home/TransactionList.vue'
 
 interface FeatureIcon {
   id: number
@@ -61,11 +62,11 @@ const featureIcons: FeatureIcon[] = [
         <QuickActionsRow />
       </section>
 
-      <section
-        class="flex-1 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 text-sm mx-4 mt-3"
-      >
-        Transaction list will go here
-      </section> 
+    <!-- Transactions (fills remaining space and scrolls) -->
+    <section class="flex-1 mt-5 mx-4 min-h-0">
+      <TransactionList />
+    </section>
+
     </main>
 
 
