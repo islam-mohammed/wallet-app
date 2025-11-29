@@ -62,17 +62,17 @@ function nextSlide() {
     <div class="grid grid-cols-2 gap-3 items-stretch">
       <button
         v-for="action in visibleActions"
-        :key="action.id"
+        :key="action?.id"
         type="button"
         class="flex items-center justify-start rounded-lg border border-[#1F1F1F] py-2 px-3 h-full"
       >
         <span
           class="w-8 h-8 rounded-full bg-[#FFF5D5] flex items-center justify-center"
         >
-          <AppIcon :name="action.icon" :size="16" color="#000000" />
+          <AppIcon :name="action?.icon" :size="16" color="#000000" />
         </span>
         <span class="mt-2 text-xs text-slate-100 text-left leading-tight pl-2">
-          {{ action.label }}
+          {{ action?.label }}
         </span>
       </button>
     </div>

@@ -51,7 +51,7 @@ const props = withDefaults(
 
     <!-- Red unread badge (top-right), like in screenshot -->
     <div
-      v-if="props.unreadCount > 0"
+      v-if="props.unreadCount! > 0"
       class="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-semibold rounded-full h-4 w-4 flex items-center justify-center"
     >
       {{ props.unreadCount }}

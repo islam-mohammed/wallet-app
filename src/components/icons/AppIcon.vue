@@ -1,49 +1,49 @@
 <script setup lang="ts">
-  import { computed } from 'vue'
+import { computed } from "vue";
 
-  type IconName =
-    | 'home'
-    | 'qr'
-    | 'plane'
-    | 'newspaper'
-    | 'card'
-    | 'user'
-    | 'bars'
-    | 'pin'
-    | 'messages'
-    | 'info'
-    | 'chevronright'
-    | 'stats-transport'
-    | 'stats-games'
-    | 'stats-chance'
-    | 'stats-donation'
-    | 'stats-findeks'
-    | 'stats-airport'
-    | 'stats-gsm'
+type IconName =
+  | "home"
+  | "qr"
+  | "plane"
+  | "newspaper"
+  | "card"
+  | "user"
+  | "bars"
+  | "pin"
+  | "messages"
+  | "info"
+  | "chevronright"
+  | "stats-transport"
+  | "stats-games"
+  | "stats-chance"
+  | "stats-donation"
+  | "stats-findeks"
+  | "stats-airport"
+  | "stats-gsm";
 
-  const props = withDefaults(
-    defineProps<{
-      name: IconName
-      /** Icon size in px (number) or any CSS size string (e.g. "1.5rem") */
-      size?: number | string
-      /** SVG color (applied to fill) */
-      color?: string
-      /** Background color of the icon container */
-      bgColor?: string
-      /** Whether the background should be fully rounded */
-      rounded?: boolean
-    }>(),
-    {
-      size: 20,
-      color: 'currentColor',
-      bgColor: 'transparent',
-      rounded: false,
-    },
-  )
+const props = withDefaults(
+  defineProps<{
+    name?: IconName;
+    /** Icon size in px (number) or any CSS size string (e.g. "1.5rem") */
+    size?: number | string;
+    /** SVG color (applied to fill) */
+    color?: string;
+    /** Background color of the icon container */
+    bgColor?: string;
+    /** Whether the background should be fully rounded */
+    rounded?: boolean;
+  }>(),
+  {
+    size: 20,
+    color: "currentColor",
+    bgColor: "transparent",
+    rounded: false,
+  },
+);
 
-  const sizePx = computed(() =>
-    typeof props.size === 'number' ? `${props.size}px` : props.size,
-  )
+const sizePx = computed(() =>
+  typeof props.size === "number" ? `${props.size}px` : props.size,
+);
 </script>
 
 <template>

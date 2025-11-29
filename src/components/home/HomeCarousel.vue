@@ -157,7 +157,7 @@ onBeforeUnmount(() => {
     <!-- Dots -->
     <div class="mt-5 flex justify-center gap-1.5">
       <span
-        v-for="(c, index) in cards"
+        v-for="(_, index) in cards"
         :key="'dot-' + index"
         class="h-1.5 rounded-full transition-all"
         :class="index === activeIndex ? 'w-4 bg-white' : 'w-2 bg-slate-600'"

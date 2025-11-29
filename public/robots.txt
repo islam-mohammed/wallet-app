@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap: to add production URL below if you generate a sitemap
+# Sitemap: https://domain.example/sitemap.xml
