@@ -19,34 +19,34 @@ const props = defineProps<{
       <div
         v-for="item in props.items"
         :key="item.id"
-        class="flex flex-col items-center min-w-[78px]"
+        class="flex flex-col items-center min-w-16"
       >
         <div class="relative">
           <!-- circular image -->
           <div
-            class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center overflow-hidden"
+            class="w-13 h-13 rounded-full border-2 border-white flex items-center justify-center overflow-hidden"
             :class="item.bg"
           >
             <!-- simple inner icon mimic -->
             <div
               v-if="item.id === 1"
-              class="w-7 h-7 rounded-full bg-emerald-300/90 border-2 border-white"
+              class="w-13 h-13 rounded-full bg-emerald-300/90 border-2 border-white"
             />
             <div
               v-else-if="item.id === 2"
-              class="w-7 h-7 rounded-full bg-red-600 flex items-center justify-center text-yellow-300 text-xs font-bold"
+              class="w-13 h-13 rounded-full bg-red-600 flex items-center justify-center text-yellow-300 text-xs font-bold"
             >
               S
             </div>
             <div
               v-else-if="item.id === 3"
-              class="w-8 h-8 rounded-full bg-lime-300 flex items-center justify-center text-slate-900 text-xs font-bold"
+              class="w-13 h-13 rounded-full bg-lime-300 flex items-center justify-center text-slate-900 text-xs font-bold"
             >
               %
             </div>
             <div
               v-else-if="item.id === 4"
-              class="w-8 h-8 rounded-full bg-sky-300 flex items-center justify-center text-slate-900 text-xs"
+              class="w-13 h-13 rounded-full bg-sky-300 flex items-center justify-center text-slate-900 text-xs"
             >
               ₿
             </div>
