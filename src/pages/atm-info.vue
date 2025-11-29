@@ -26,16 +26,12 @@ function handleRequestCard() {
 
     <main class="flex-1 px-6">
       <section class="mt-4 text-center">
-        <h1 class="text-[24px] leading-snug font-semibold text-slate-50">
-          Akbank ATM’leri tamamen
-          <br />
-          ücretsiz.
+        <h1 class="text-2xl leading-snug font-semibold text-slate-50">
+          Akbank ATMs are completely FREE.
         </h1>
 
-        <p class="mt-3 text-[13px] leading-relaxed text-slate-400">
-          Papara Card ile tüm ATM’lerden para çekebilir,
-          Akbank ATM’lerinde tamamen ücretsiz para
-          yatırabilir ve çekebilirsin.
+        <p class="mt-3 text-sm leading-relaxed text-slate-400">
+With your Papara Card, you can withdraw money from all ATMs, and you can deposit and withdraw money completely free of charge at Akbank ATMs.
         </p>
       </section>
 
@@ -44,8 +40,8 @@ function handleRequestCard() {
     </main>
 
     <footer class="px-6 pb-8 pt-4 space-y-3 bg-black">
-      <SecondaryButton label="ATM Bul" @click="handleFindAtm" />
-      <PrimaryButton label="Papara Card iste" @click="handleRequestCard" />
+      <SecondaryButton label="Find ATM" @click="handleFindAtm" />
+      <PrimaryButton label="Request Papara Card" @click="handleRequestCard" />
     </footer>
   </div>
 </template>

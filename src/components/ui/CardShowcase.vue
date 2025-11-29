@@ -5,7 +5,7 @@
   <div class="relative w-full max-w-xs mx-auto h-60 mt-16 mb-4">
     <!-- Left gray card -->
     <div
-      class="absolute left-0 bottom-4 w-38 h-60 rounded-2xl bg-neutral-100 text-neutral-500 shadow-lg shadow-black/40 overflow-hidden"
+      class="absolute left-0 bottom-4 w-38 h-60 rounded-xl bg-neutral-100 text-neutral-500 shadow-lg shadow-black/40 overflow-hidden"
     >
       <!-- chip -->
       <div class="mt-4 ml-4 w-4 h-8 rounded-md bg-neutral-200" />
@@ -28,7 +28,7 @@
 
     <!-- Right blue card -->
     <div
-      class="absolute right-0 bottom-4 w-38 h-60 rounded-2xl bg-sky-400 text-white shadow-lg shadow-black/40 overflow-hidden"
+      class="absolute right-0 bottom-4 w-38 h-60 rounded-xl bg-sky-400 text-white shadow-lg shadow-black/40 overflow-hidden"
     >
       <!-- chip -->
       <div class="mt-4 ml-4 w-7 h-5 rounded-md bg-white/80" />
@@ -53,7 +53,7 @@
 
     <!-- Center black card (on top) -->
     <div
-      class="absolute inset-x-20  bottom-0 w-38 h-60 rounded-2xl bg-neutral-900 text-neutral-100 shadow-2xl shadow-black/80 overflow-hidden"
+      class="absolute inset-x-20  bottom-0 w-38 h-60 rounded-xl bg-neutral-900 text-neutral-100 shadow-2xl shadow-black/80 overflow-hidden"
     >
       <!-- chip -->
       <div class="mt-5 ml-5 w-8 h-5 rounded-md bg-neutral-200/90" />

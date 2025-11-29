@@ -26,7 +26,7 @@ function handleBack() {
     <button
       v-if="props.showBack"
       type="button"
-      class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-4xl text-slate-50"
+      class="w-10 h-10 rounded-full flex items-center justify-center text-4xl text-slate-50"
       @click="handleBack"
     >
       ‹
