@@ -1,12 +1,14 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="bg-neutral-800 border border-[#1F1F1F] rounded-lg p-4 text-white h-full">
+  <div
+    class="bg-neutral-800 border border-[#1F1F1F] rounded-lg p-4 text-white h-full"
+  >
     <!-- Header row -->
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-2">
         <div
-          class="w-5 h-5 rounded-full bg-white text-black flex items-center justify-center text-[11px] font-semibold"
+          class="w-5 h-5 rounded-full bg-white text-black flex items-center justify-center text-xs font-semibold"
         >
           P
         </div>
@@ -19,7 +21,7 @@
         class="w-10 h-6 rounded-full bg-black/60 flex items-center px-0.5"
       >
         <div
-          class="w-5 h-5 rounded-full bg-white text-black text-[11px] flex items-center justify-center ml-auto"
+          class="w-5 h-5 rounded-full bg-white text-black text-xs flex items-center justify-center ml-auto"
         >
           ₺
         </div>

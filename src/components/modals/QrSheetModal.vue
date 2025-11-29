@@ -1,39 +1,39 @@
 <script setup lang="ts">
-  import AppIcon from '@/components/icons/AppIcon.vue'
+import AppIcon from "@/components/icons/AppIcon.vue";
 
-  type QrActionId = 'pay' | 'receive' | 'withdraw' | 'deposit'
+defineProps<{
+  open: boolean;
+}>();
 
-  interface QrAction {
-    id: QrActionId
-    label: string
-    description?: string
-    icon: 'qr' | 'card'
-  }
+type QrActionId = "pay" | "receive" | "withdraw" | "deposit";
 
-  const props = defineProps<{
-    open: boolean
-  }>()
+interface QrAction {
+  id: QrActionId;
+  label: string;
+  description?: string;
+  icon: "qr" | "card";
+}
 
-  const emit = defineEmits<{
-    (e: 'update:open', value: boolean): void
-    (e: 'select', id: QrActionId): void
-  }>()
+const emit = defineEmits<{
+  (e: "update:open", value: boolean): void;
+  (e: "select", id: QrActionId): void;
+}>();
 
-  const actions: QrAction[] = [
-    { id: 'pay', label: 'Pay with QR', icon: 'qr' },
-    { id: 'receive', label: 'Receive with QR', icon: 'qr' },
-    { id: 'withdraw', label: 'Withdraw from ATM with QR', icon: 'card' },
-    { id: 'deposit', label: 'Deposit to ATM with QR', icon: 'card' },
-  ]
+const actions: QrAction[] = [
+  { id: "pay", label: "Pay with QR", icon: "qr" },
+  { id: "receive", label: "Receive with QR", icon: "qr" },
+  { id: "withdraw", label: "Withdraw from ATM with QR", icon: "card" },
+  { id: "deposit", label: "Deposit to ATM with QR", icon: "card" },
+];
 
-  function close() {
-    emit('update:open', false)
-  }
+function close() {
+  emit("update:open", false);
+}
 
-  function handleSelect(action: QrAction) {
-    emit('select', action.id)
-    close()
-  }
+function handleSelect(action: QrAction) {
+  emit("select", action.id);
+  close();
+}
 </script>
 
 <template>

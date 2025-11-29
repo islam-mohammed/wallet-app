@@ -1,13 +1,13 @@
 <script setup lang="ts">
-  import notification from '@/assets/images/notification.webp'
-  const props = withDefaults(
-    defineProps<{
-      unreadCount?: number
-    }>(),
-    {
-      unreadCount: 0,
-    },
-  )
+import notification from "@/assets/images/notification.webp";
+const props = withDefaults(
+  defineProps<{
+    unreadCount?: number | null;
+  }>(),
+  {
+    unreadCount: 0,
+  },
+);
 </script>
 
 <template>
@@ -35,15 +35,15 @@
       <!-- Text block -->
       <div class="flex-1">
         <!-- Top small line: "Today 06:00" -->
-        <p class="text-[11px] text-slate-500 leading-snug">Today 06:00</p>
+        <p class="text-xs text-slate-500 leading-snug">Today 06:00</p>
 
         <!-- Main title -->
-        <p class="text-[14px] font-semibold text-white leading-snug">
+        <p class="text-sm font-semibold text-white leading-snug">
           Monthly account summary created.
         </p>
 
         <!-- Subtitle -->
-        <p class="text-[12px] text-slate-400 leading-snug mt-0.5">
+        <p class="text-xs text-slate-400 leading-snug mt-0.5">
           Tap to see what you did this month.
         </p>
       </div>

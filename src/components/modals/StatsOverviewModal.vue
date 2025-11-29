@@ -1,169 +1,171 @@
 <script setup lang="ts">
-  import { computed } from 'vue'
-  import { Doughnut } from 'vue-chartjs'
-  import {
-    Chart,
-    ArcElement,
-    Tooltip,
-    Legend,
-    type ChartOptions,
-    type ChartData,
-  } from 'chart.js'
-  import AppIcon from '@/components/icons/AppIcon.vue'
+import { computed } from "vue";
+import { Doughnut } from "vue-chartjs";
+import {
+  Chart,
+  ArcElement,
+  Tooltip,
+  Legend,
+  type ChartOptions,
+  type ChartData,
+} from "chart.js";
+import AppIcon from "@/components/icons/AppIcon.vue";
 
-  Chart.register(ArcElement, Tooltip, Legend)
+Chart.register(ArcElement, Tooltip, Legend);
 
-  const props = defineProps<{
-    open: boolean
-  }>()
+const props = defineProps<{
+  open: boolean;
+}>();
 
-  const emit = defineEmits<{
-    'update:open': [boolean]
-  }>()
+const emit = defineEmits<{
+  "update:open": [boolean];
+}>();
 
-  const isOpen = computed({
-    get: () => props.open,
-    set: (value: boolean) => emit('update:open', value),
-  })
+const isOpen = computed({
+  get: () => props.open,
+  set: (value: boolean) => emit("update:open", value),
+});
 
-  type CategoryKey =
-    | 'transport'
-    | 'games'
-    | 'chance'
-    | 'donation'
-    | 'findeks'
-    | 'airport'
-    | 'gsm'
+type CategoryKey =
+  | "transport"
+  | "games"
+  | "chance"
+  | "donation"
+  | "findeks"
+  | "airport"
+  | "gsm";
 
-  type Category = {
-    key: CategoryKey
-    label: string
-    amount: number
-    color: string
-    icon: string
-  }
+type Category = {
+  key: CategoryKey;
+  label: string;
+  amount: number;
+  color: string;
+  icon: string;
+};
 
-  const categories: Category[] = [
+const categories: Category[] = [
+  {
+    key: "transport",
+    label: "Transport Cards",
+    amount: 820.5,
+    color: "#1FB56C",
+    icon: "stats-transport",
+  },
+  {
+    key: "games",
+    label: "Games & Digital Code",
+    amount: 560.75,
+    color: "#7854D8",
+    icon: "stats-games",
+  },
+  {
+    key: "airport",
+    label: "Airport Services",
+    amount: 525,
+    color: "#20B0B0",
+    icon: "stats-airport",
+  },
+  {
+    key: "gsm",
+    label: "GSM TL/Package",
+    amount: 381,
+    color: "#0176B8",
+    icon: "stats-gsm",
+  },
+  {
+    key: "donation",
+    label: "Donations",
+    amount: 290.25,
+    color: "#F14E54",
+    icon: "stats-donation",
+  },
+  {
+    key: "chance",
+    label: "Chance Games",
+    amount: 430,
+    color: "#4BC3DF",
+    icon: "stats-chance",
+  },
+  {
+    key: "findeks",
+    label: "Findeks",
+    amount: 410,
+    color: "#00A1FF",
+    icon: "stats-findeks",
+  },
+];
+
+const totalAmount = computed(() =>
+  categories.reduce((sum, c) => sum + c.amount, 0),
+);
+
+const formatCurrency = (value: number) =>
+  new Intl.NumberFormat("tr-TR", {
+    style: "currency",
+    currency: "TRY",
+    minimumFractionDigits: 2,
+  }).format(value);
+
+const chartData = computed<ChartData<"doughnut">>(() => ({
+  labels: categories.map((c) => c.label),
+  datasets: [
     {
-      key: 'transport',
-      label: 'Transport Cards',
-      amount: 820.5,
-      color: '#1FB56C',
-      icon: 'stats-transport',
+      data: categories.map((c) => c.amount),
+      backgroundColor: categories.map((c) => c.color),
+      borderWidth: 0,
+      borderRadius: 0, // solid ring
+      hoverOffset: 2,
     },
-    {
-      key: 'games',
-      label: 'Games & Digital Code',
-      amount: 560.75,
-      color: '#7854D8',
-      icon: 'stats-games',
-    },
-    {
-      key: 'airport',
-      label: 'Airport Services',
-      amount: 525,
-      color: '#20B0B0',
-      icon: 'stats-airport',
-    },
-    {
-      key: 'gsm',
-      label: 'GSM TL/Package',
-      amount: 381,
-      color: '#0176B8',
-      icon: 'stats-gsm',
-    },
-    {
-      key: 'donation',
-      label: 'Donations',
-      amount: 290.25,
-      color: '#F14E54',
-      icon: 'stats-donation',
-    },
-    {
-      key: 'chance',
-      label: 'Chance Games',
-      amount: 430,
-      color: '#4BC3DF',
-      icon: 'stats-chance',
-    },
-    {
-      key: 'findeks',
-      label: 'Findeks',
-      amount: 410,
-      color: '#00A1FF',
-      icon: 'stats-findeks',
-    },
-  ]
+  ],
+}));
 
-  const totalAmount = computed(() => categories.reduce((sum, c) => sum + c.amount, 0))
-
-  const formatCurrency = (value: number) =>
-    new Intl.NumberFormat('tr-TR', {
-      style: 'currency',
-      currency: 'TRY',
-      minimumFractionDigits: 2,
-    }).format(value)
-
-  const chartData = computed<ChartData<'doughnut'>>(() => ({
-    labels: categories.map((c) => c.label),
-    datasets: [
-      {
-        data: categories.map((c) => c.amount),
-        backgroundColor: categories.map((c) => c.color),
-        borderWidth: 0,
-        borderRadius: 0, // solid ring
-        hoverOffset: 2,
-      },
-    ],
-  }))
-
-  const chartOptions: ChartOptions<'doughnut'> = {
-    responsive: true,
-    maintainAspectRatio: false,
-    cutout: '58%',
-    rotation: -90 * (Math.PI / 180),
-    layout: {
-      padding: 0,
+const chartOptions: ChartOptions<"doughnut"> = {
+  responsive: true,
+  maintainAspectRatio: false,
+  cutout: "58%",
+  rotation: -90 * (Math.PI / 180),
+  layout: {
+    padding: 0,
+  },
+  plugins: {
+    legend: {
+      display: false,
     },
-    plugins: {
-      legend: {
-        display: false,
-      },
-      tooltip: {
-        callbacks: {
-          label: (ctx) => {
-            const label = ctx.label || ''
-            const value = ctx.parsed || 0
-            return `${label}: ${formatCurrency(value)}`
-          },
+    tooltip: {
+      callbacks: {
+        label: (ctx) => {
+          const label = ctx.label || "";
+          const value = ctx.parsed || 0;
+          return `${label}: ${formatCurrency(value)}`;
         },
       },
     },
-  }
+  },
+};
 
-  // icon positions: centered in each slice
-  const iconPositions = computed(() => {
-    const total = categories.reduce((sum, c) => sum + c.amount, 0)
-    let accumulated = 0
+// icon positions: centered in each slice
+const iconPositions = computed(() => {
+  const total = categories.reduce((sum, c) => sum + c.amount, 0);
+  let accumulated = 0;
 
-    return categories.map((category) => {
-      const startAngle = (accumulated / total) * 2 * Math.PI
-      const endAngle = ((accumulated + category.amount) / total) * 2 * Math.PI
-      const midAngle = (startAngle + endAngle) / 2 - Math.PI / 2
+  return categories.map((category) => {
+    const startAngle = (accumulated / total) * 2 * Math.PI;
+    const endAngle = ((accumulated + category.amount) / total) * 2 * Math.PI;
+    const midAngle = (startAngle + endAngle) / 2 - Math.PI / 2;
 
-      // mid radius of ring (inner ≈ 29%, outer = 50%)
-      const radius = 40
-      const x = 50 + radius * Math.cos(midAngle)
-      const y = 50 + radius * Math.sin(midAngle)
+    // mid radius of ring (inner ≈ 29%, outer = 50%)
+    const radius = 40;
+    const x = 50 + radius * Math.cos(midAngle);
+    const y = 50 + radius * Math.sin(midAngle);
 
-      accumulated += category.amount
+    accumulated += category.amount;
 
-      return {
-        left: `${x}%`,
-        top: `${y}%`,
-      }
-    })
-  })
+    return {
+      left: `${x}%`,
+      top: `${y}%`,
+    };
+  });
+});
 </script>
 
 <template>
@@ -192,7 +194,7 @@
         >
           <!-- small summary top-right -->
           <div
-            class="absolute right-5 top-5 flex flex-col items-center gap-1 text-[11px] text-slate-100"
+            class="absolute right-5 top-5 flex flex-col items-center gap-1 text-xs text-slate-100"
           >
             <div
               class="relative flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/80"
@@ -216,13 +218,17 @@
           <!-- donut -->
           <div class="mt-10 mb-6 flex w-full justify-center">
             <div class="relative h-[210px] w-[210px]">
-              <Doughnut :data="chartData" :options="chartOptions" class="h-full w-full" />
+              <Doughnut
+                :data="chartData"
+                :options="chartOptions"
+                class="h-full w-full"
+              />
 
               <!-- center label + total -->
               <div
                 class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center"
               >
-                <span class="text-[13px] text-slate-300">Total</span>
+                <span class="text-sm text-slate-300">Total</span>
                 <span class="mt-1 text-[22px] font-semibold">
                   {{ formatCurrency(totalAmount) }}
                 </span>
@@ -258,7 +264,11 @@
                 class="h-2.5 w-2.5 rounded-full"
                 :style="{ backgroundColor: category.color }"
               />
-              <AppIcon :name="category.icon as any" :size="18" class="text-slate-100" />
+              <AppIcon
+                :name="category.icon as any"
+                :size="18"
+                class="text-slate-100"
+              />
               <span class="flex-1 text-slate-100">
                 {{ category.label }}
               </span>
@@ -281,7 +291,7 @@
             @click="isOpen = false"
           >
             <span
-              class="flex h-9 w-9 items-center justify-center rounded-full border border-white/40 text-[16px]"
+              class="flex h-9 w-9 items-center justify-center rounded-full border border-white/40 text-base"
             >
               ✕
             </span>

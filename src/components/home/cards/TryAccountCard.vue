@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import AppIcon from '@/components/icons/AppIcon.vue'
+import AppIcon from "@/components/icons/AppIcon.vue";
 </script>
 
 <template>
@@ -14,7 +14,9 @@
           <span class="text-[9px] text-white font-semibold">TR</span>
         </div>
       </div>
-      <span class="text-[12px] text-slate-200 font-regular"> Turkish Lira Account </span>
+      <span class="text-xs text-slate-200 font-regular">
+        Turkish Lira Account
+      </span>
     </div>
 
     <!-- Divider -->
@@ -23,12 +25,15 @@
     <!-- Balance -->
     <div class="mt-4 flex gap-2 items-center">
       <span class="text-3xl leading-none font-semibold">₺0.00</span>
-      <button type="button" class="text-xs text-slate-400 flex items-center gap-1">
+      <button
+        type="button"
+        class="text-xs text-slate-400 flex items-center gap-1"
+      >
         <AppIcon name="info" :size="16" color="#fff" />
       </button>
     </div>
 
-    <p class="mt-1 text-[11px] text-slate-400">
+    <p class="mt-1 text-xs text-slate-400">
       IBAN: <span class="underline">TR00 0000 0000 0000 0000 0000 00</span>
     </p>
 
