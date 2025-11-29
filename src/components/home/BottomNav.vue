@@ -2,7 +2,8 @@
 import AppIcon from '@/components/icons/AppIcon.vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ref } from 'vue'
-import StatsOverviewModal from '../stats/StatsOverviewModal.vue'
+import StatsOverviewModal from '@/components/modals/StatsOverviewModal.vue'
+import QrActionSheet from '@/components/modals/QrSheetModal.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -25,14 +26,17 @@ const navItems: NavItem[] = [
 ]
 
 const showStats = ref(false)
+const showQrSheet = ref(false)
 
 // 3) Navigation handler
 function handleNavClick(item: NavItem) {
   if(item.route) {
     router.push(item.route)
   } else if (item.name === 'qr') {
-   showStats.value = true
-  } 
+   showQrSheet.value = true
+  } else if (item.name === 'transfer') {
+    showStats.value = true
+  }
   
 }
 
@@ -62,6 +66,7 @@ function isActive(item: NavItem): boolean {
         <span class="text-xs">{{ item.label }}</span>
       </button>
       <StatsOverviewModal v-model:open="showStats" />
+      <QrActionSheet v-model:open="showQrSheet" />
     </div>
   </nav>
 </template>
