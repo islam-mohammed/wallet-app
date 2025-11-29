@@ -9,6 +9,7 @@ import UsdAccountCard from '@/components/home/cards/UsdAccountCard.vue'
 import PreciousMetalsCard from '@/components/home/cards/PreciousMetalsCard.vue'
 import AllAssetsCard from '@/components/home/cards/AllAssetsCard.vue'
 import SavingAccountCard from '@/components/home/cards/SavingAccountCard.vue'
+import NotificationBanner from '@/components/home/NotificationBanner.vue'
 
 interface FeatureIcon {
   id: number
@@ -49,12 +50,12 @@ const featureIcons: FeatureIcon[] = [
 
       <!-- Placeholder sections to be implemented in later steps -->
       <section
-        class="h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 text-sm mx-4 mt-3"
+        class="h-20 flex items-center justify-center bg-transparent text-slate-400 text-sm mx-4 mt-3 "
       >
-        Notification banner will go here
+       <NotificationBanner :unreadCount="5" class="mt-4" />
       </section>
 
-      <section
+      <!-- <section
         class="h-24 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 text-sm mx-4 mt-3"
       >
         Quick actions will go here
@@ -64,7 +65,7 @@ const featureIcons: FeatureIcon[] = [
         class="flex-1 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 text-sm mx-4 mt-3"
       >
         Transaction list will go here
-      </section>
+      </section> -->
     </main>
 
 

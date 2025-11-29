@@ -61,7 +61,7 @@ const props = defineProps<{
           <!-- pin icon when pinned === true -->
           <div
             v-if="item.pinned"
-            class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-white flex items-center justify-center border border-white/60"
+            class="absolute top-1 -right-1 w-4 h-4 rounded-full bg-white flex items-center justify-center border border-white/60"
           >
             <AppIcon name="pin" :size="10" color="#000" />
           </div>

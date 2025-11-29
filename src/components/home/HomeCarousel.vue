@@ -162,7 +162,7 @@ onBeforeUnmount(() => {
     </div>
 
     <!-- Dots -->
-    <div class="mt-2 flex justify-center gap-1.5">
+    <div class="mt-5 flex justify-center gap-1.5">
       <span
         v-for="(c, index) in cards"
         :key="'dot-' + index"
